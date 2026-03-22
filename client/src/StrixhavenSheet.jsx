@@ -149,9 +149,15 @@ function StrixhavenSheet({ selectedMember }) {
       });
       const result = await res.json();
       if (result.success) { 
-        setFormData(result.data); 
-        lastSavedData.current = JSON.stringify(result.data);
-        setStatusMsg("Loaded ✅"); 
+        if (result.data) {
+          setFormData(result.data); 
+          lastSavedData.current = JSON.stringify(result.data);
+          setStatusMsg("Loaded ✅"); 
+        } else {
+          setFormData(INITIAL_STATE);
+          lastSavedData.current = JSON.stringify(INITIAL_STATE);
+          setStatusMsg("New Sheet ✅");
+        }
       } else {
         setStatusMsg("Error Loading ❌");
       }

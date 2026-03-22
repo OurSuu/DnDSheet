@@ -181,7 +181,7 @@ app.post('/api/load', async (req, res) => {
       res.status(200).json({ success: true, data: result.rows[0].data, updated_at: result.rows[0].updated_at });
     } else {
       console.log(`No existing sheet found for member ${member_id}`);
-      res.status(404).json({ success: false, error: 'Sheet not found.' });
+      res.status(200).json({ success: true, data: null, message: 'New sheet' });
     }
   } catch (error) {
     console.error('Error loading data:', error);
