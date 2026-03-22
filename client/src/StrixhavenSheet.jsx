@@ -195,6 +195,21 @@ function StrixhavenSheet({ selectedMember }) {
     }
   };
 
+  if (!selectedMember) {
+    return (
+      <div className="app-layout waiting-layout">
+        <div className="waiting-container">
+          <div className="waiting-book-frame">
+            <img src="/Waiting.jpg" className="waiting-bg" alt="Waiting Book" />
+            <div className="book-light-sweep"></div>
+          </div>
+          <h2 className="waiting-text">The Grimoire is Closed</h2>
+          <p className="waiting-subtext">Select a student from the sidebar to open their records.</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="app-layout">
       {/* Top Banner Controls */}
