@@ -10,6 +10,7 @@ function Sidebar({ selectedMember, onSelectMember }) {
   const [editingMemberId, setEditingMemberId] = useState(null);
   const [editMemberName, setEditMemberName] = useState('');
   const [expandedParties, setExpandedParties] = useState({});
+  const [isOpen, setIsOpen] = useState(true);
 
   useEffect(() => {
     fetchData();
@@ -140,12 +141,21 @@ function Sidebar({ selectedMember, onSelectMember }) {
   };
 
   return (
-    <div className="sidebar-container">
-      <div className="sidebar-header">
-        <h2>Parties & Members</h2>
-      </div>
+    <>
+      {!isOpen && (
+        <button className="sidebar-toggle-btn" onClick={() => setIsOpen(true)} title="Open Grimoire">
+          ☰
+        </button>
+      )}
+      <div className={`sidebar-container ${!isOpen ? 'closed' : ''}`}>
+        <div className="sidebar-header">
+           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+             <h2>Grimoire</h2>
+             <button type="button" className="close-sidebar-btn" onClick={() => setIsOpen(false)} title="Close Grimoire">✖</button>
+           </div>
+        </div>
 
-      <div className="sidebar-content">
+        <div className="sidebar-content">
         <form onSubmit={handleCreateParty} className="add-party-form">
           <input
             type="text"
@@ -227,6 +237,7 @@ function Sidebar({ selectedMember, onSelectMember }) {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

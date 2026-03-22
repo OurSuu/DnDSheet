@@ -108,6 +108,14 @@ function StrixhavenSheet({ selectedMember }) {
     }
   }, [formData, selectedMember]);
 
+  React.useEffect(() => {
+    // Auto-hide success messages after 2.5 seconds to fade out the banner
+    if (statusMsg === "Loaded ✅" || statusMsg === "New Sheet ✅" || statusMsg === "Saved ✅") {
+      const timer = setTimeout(() => setStatusMsg(''), 2500);
+      return () => clearTimeout(timer);
+    }
+  }, [statusMsg]);
+
   // Form State Handlers
   const updateData = (section, index, field, value) => {
     setFormData(prev => {
@@ -190,7 +198,7 @@ function StrixhavenSheet({ selectedMember }) {
   return (
     <div className="app-layout">
       {/* Top Banner Controls */}
-      <div className="top-banner-controls">
+      <div className={`top-banner-controls ${statusMsg ? '' : 'hidden'}`}>
         <div style={{ marginRight: '20px', fontWeight: 'bold' }}>
           {selectedMember ? `Selected: ${selectedMember.name}` : 'No Member Selected'}
         </div>

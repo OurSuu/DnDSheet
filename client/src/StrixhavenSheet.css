@@ -176,6 +176,13 @@ html, body {
   box-shadow: 0 8px 30px rgba(0,0,0,0.8), inset 0 0 15px rgba(0,0,0,0.5);
   font-family: 'Cinzel', serif;
   letter-spacing: 1px;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.top-banner-controls.hidden {
+  opacity: 0;
+  transform: translate(-50%, -30px);
+  pointer-events: none;
 }
 
 
