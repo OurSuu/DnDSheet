@@ -1,0 +1,81 @@
+        <div className="frame-1" data-layer="Frame 1"></div>
+        <input type="checkbox" className="checkbox inspirationcheckbox-0" data-layer="InspirationCheckBox" checked={formData.relationships[0].inspiration} onChange={e => updateData("relationships", 0, "inspiration", e.target.checked)} />
+        <input type="checkbox" className="checkbox inspirationcheckbox-1" data-layer="InspirationCheckBox" checked={formData.relationships[1].inspiration} onChange={e => updateData("relationships", 1, "inspiration", e.target.checked)} />
+        <input type="checkbox" className="checkbox inspirationcheckbox-2" data-layer="InspirationCheckBox" checked={formData.relationships[2].inspiration} onChange={e => updateData("relationships", 2, "inspiration", e.target.checked)} />
+        <input type="checkbox" className="checkbox inspirationcheckbox-3" data-layer="InspirationCheckBox" checked={formData.relationships[3].inspiration} onChange={e => updateData("relationships", 3, "inspiration", e.target.checked)} />
+        <input type="checkbox" className="checkbox inspirationcheckbox-4" data-layer="InspirationCheckBox" checked={formData.relationships[4].inspiration} onChange={e => updateData("relationships", 4, "inspiration", e.target.checked)} />
+        <input type="checkbox" className="checkbox extracurriculars-checkbox" data-layer="Extracurriculars_CheckBox" checked={formData.extracurriculars[0].d4} onChange={e => updateData("extracurriculars", 0, "d4", e.target.checked)} />
+        <input type="checkbox" className="checkbox extracurriculars2-checkbox" data-layer="Extracurriculars2_CheckBox" checked={formData.extracurriculars[1].d4} onChange={e => updateData("extracurriculars", 1, "d4", e.target.checked)} />
+        <input type="checkbox" className="checkbox year1checkbox" data-layer="Year1CheckBox" />
+        <input type="checkbox" className="checkbox year1-2-2checkbox" data-layer="Year1_2_2CheckBox" />
+        <input type="checkbox" className="checkbox year1-2-3checkbox" data-layer="Year1_2_3CheckBox" />
+        <input type="checkbox" className="checkbox year1-2-4checkbox" data-layer="Year1_2_4CheckBox" />
+        <input type="checkbox" className="checkbox year1-3-4checkbox" data-layer="Year1_3_4CheckBox" />
+        <input type="checkbox" className="checkbox year1-3-3checkbox" data-layer="Year1_3_3CheckBox" />
+        <input type="checkbox" className="checkbox year1-3-2checkbox" data-layer="Year1_3_2CheckBox" />
+        <input type="checkbox" className="checkbox year1-3-1checkbox" data-layer="Year1_3_1CheckBox" />
+        <input type="checkbox" className="checkbox year3checkbox" data-layer="Year3CheckBox" />
+        <input type="checkbox" className="checkbox year3-2checkbox" data-layer="Year3_2CheckBox" />
+        <input type="checkbox" className="checkbox year3-3checkbox" data-layer="Year3_3CheckBox" />
+        <input type="checkbox" className="checkbox year3-4checkbox" data-layer="Year3_4CheckBox" />
+        <input type="checkbox" className="checkbox year3-2-1checkbox" data-layer="Year3_2_1CheckBox" />
+        <input type="checkbox" className="checkbox year3-2-2checkbox" data-layer="Year3_2_2CheckBox" />
+        <input type="checkbox" className="checkbox year3-2-3checkbox" data-layer="Year3_2_3CheckBox" />
+        <input type="checkbox" className="checkbox year3-2-4checkbox" data-layer="Year3_2_4CheckBox" />
+        <input type="checkbox" className="checkbox year3-2-5checkbox" data-layer="Year3_2_5CheckBox" />
+        <input type="checkbox" className="checkbox year3-3-4checkbox" data-layer="Year3_3_4CheckBox" />
+        <input type="checkbox" className="checkbox year3-3-3checkbox" data-layer="Year3_3_3CheckBox" />
+        <input type="checkbox" className="checkbox year3-3-2checkbox" data-layer="Year3_3_2CheckBox" />
+        <input type="checkbox" className="checkbox year3-3-1checkbox" data-layer="Year3_3_1CheckBox" />
+        <input type="checkbox" className="checkbox year1-2-1checkbox" data-layer="Year1_2_1CheckBox" />
+        <input type="checkbox" className="checkbox year1-1checkbox" data-layer="Year1_1CheckBox" />
+        <input type="checkbox" className="checkbox year1-2checkbox" data-layer="Year1_2CheckBox" />
+        <input type="checkbox" className="checkbox year1-3checkbox" data-layer="Year1_3CheckBox" />
+        <input type="checkbox" className="checkbox year2checkbox" data-layer="Year2CheckBox" />
+        <input type="checkbox" className="checkbox year2-2-1checkbox" data-layer="Year2_2_1CheckBox" />
+        <input type="checkbox" className="checkbox year2-2-2checkbox" data-layer="Year2_2_2CheckBox" />
+        <input type="checkbox" className="checkbox year2-3-2checkbox" data-layer="Year2_3_2CheckBox" />
+        <input type="checkbox" className="checkbox year2-3-3checkbox" data-layer="Year2_3_3CheckBox" />
+        <input type="checkbox" className="checkbox year2-3-4checkbox" data-layer="Year2_3_4CheckBox" />
+        <input type="checkbox" className="checkbox year2-3-5checkbox" data-layer="Year2_3_5CheckBox" />
+        <input type="checkbox" className="checkbox year2-2-3checkbox" data-layer="Year2_2_3CheckBox" />
+        <input type="checkbox" className="checkbox year2-2-4checkbox" data-layer="Year2_2_4CheckBox" />
+        <input type="checkbox" className="checkbox year2-3-1checkbox" data-layer="Year2_3_1CheckBox" />
+        <input type="checkbox" className="checkbox year4checkbox" data-layer="Year4CheckBox" />
+        <input type="checkbox" className="checkbox year4-2checkbox" data-layer="Year4_2CheckBox" />
+        <input type="checkbox" className="checkbox year4-3checkbox" data-layer="Year4_3CheckBox" />
+        <input type="checkbox" className="checkbox notime-checkbox" data-layer="NoTime_CheckBox" />
+        <input type="checkbox" className="checkbox notime2-checkbox" data-layer="NoTime2_CheckBox" />
+        <input type="checkbox" className="checkbox year4-4checkbox" data-layer="Year4_4CheckBox" />
+        <input type="checkbox" className="checkbox year2-2checkbox" data-layer="Year2_2CheckBox" />
+        <input type="checkbox" className="checkbox year2-3checkbox" data-layer="Year2_3CheckBox" />
+        <input type="checkbox" className="checkbox year2-4checkbox" data-layer="Year2_4CheckBox" />
+        <input type="text" className="input name-txt" data-layer="Name_Txt" value={formData.relationships[0].name} onChange={e => updateData("relationships", 0, "name", e.target.value)} />
+        <input type="number" className="input point-int" data-layer="Point_Int" value={formData.relationships[0].points} onChange={e => updateData("relationships", 0, "points", Number(e.target.value))} />
+        <input type="number" className="input point2-int" data-layer="Point2_Int" value={formData.relationships[1].points} onChange={e => updateData("relationships", 1, "points", Number(e.target.value))} />
+        <input type="number" className="input point3-int" data-layer="Point3_Int" value={formData.relationships[2].points} onChange={e => updateData("relationships", 2, "points", Number(e.target.value))} />
+        <input type="number" className="input point4-int" data-layer="Point4_Int" value={formData.relationships[3].points} onChange={e => updateData("relationships", 3, "points", Number(e.target.value))} />
+        <input type="number" className="input point5-int" data-layer="Point5_Int" value={formData.relationships[4].points} onChange={e => updateData("relationships", 4, "points", Number(e.target.value))} />
+        <input type="text" className="input relationship-txt" data-layer="Relationship_Txt" value={formData.relationships[0].relationship} onChange={e => updateData("relationships", 0, "relationship", e.target.value)} />
+        <input type="text" className="input relationship2-txt" data-layer="Relationship2_Txt" value={formData.relationships[1].relationship} onChange={e => updateData("relationships", 1, "relationship", e.target.value)} />
+        <input type="text" className="input relationship3-txt" data-layer="Relationship3_Txt" value={formData.relationships[2].relationship} onChange={e => updateData("relationships", 2, "relationship", e.target.value)} />
+        <input type="text" className="input relationship4-txt" data-layer="Relationship4_Txt" value={formData.relationships[3].relationship} onChange={e => updateData("relationships", 3, "relationship", e.target.value)} />
+        <input type="text" className="input relationship5-txt" data-layer="Relationship5_Txt" value={formData.relationships[4].relationship} onChange={e => updateData("relationships", 4, "relationship", e.target.value)} />
+        <input type="text" className="input bool-bane-txt" data-layer="Bool/Bane_Txt" value={formData.relationships[0].boonBane} onChange={e => updateData("relationships", 0, "boonBane", e.target.value)} />
+        <input type="text" className="input bool-bane2-txt" data-layer="Bool/Bane2_Txt" value={formData.relationships[1].boonBane} onChange={e => updateData("relationships", 1, "boonBane", e.target.value)} />
+        <input type="text" className="input bool-bane3-txt" data-layer="Bool/Bane3_Txt" value={formData.relationships[2].boonBane} onChange={e => updateData("relationships", 2, "boonBane", e.target.value)} />
+        <input type="text" className="input bool-bane4-txt" data-layer="Bool/Bane4_Txt" value={formData.relationships[3].boonBane} onChange={e => updateData("relationships", 3, "boonBane", e.target.value)} />
+        <input type="text" className="input bool-bane5-txt" data-layer="Bool/Bane5_Txt" value={formData.relationships[4].boonBane} onChange={e => updateData("relationships", 4, "boonBane", e.target.value)} />
+        <input type="text" className="input ex-skills-txt" data-layer="Ex_Skills_Txt" value={formData.extracurriculars[0].skills} onChange={e => updateData("extracurriculars", 0, "skills", e.target.value)} />
+        <input type="text" className="input ex-skills2-txt" data-layer="Ex_Skills2_Txt" value={formData.extracurriculars[1].skills} onChange={e => updateData("extracurriculars", 1, "skills", e.target.value)} />
+        <input type="text" className="input ex-name-txt" data-layer="Ex_Name_Txt" value={formData.extracurriculars[0].name} onChange={e => updateData("extracurriculars", 0, "name", e.target.value)} />
+        <input type="text" className="input employer-txt" data-layer="Employer_Txt" value={formData.job.employer} onChange={e => setFormData({...formData, job: {...formData.job, employer: e.target.value}})} />
+        <input type="text" className="input job-txt" data-layer="Job_Txt" value={formData.job.job} onChange={e => setFormData({...formData, job: {...formData.job, job: e.target.value}})} />
+        <input type="text" className="input coworker-txt" data-layer="Coworker_Txt" value={formData.job.coworker} onChange={e => setFormData({...formData, job: {...formData.job, coworker: e.target.value}})} />
+        <input type="text" className="input ex-name2-txt" data-layer="Ex_Name2_Txt" value={formData.extracurriculars[1].name} onChange={e => updateData("extracurriculars", 1, "name", e.target.value)} />
+        <input type="text" className="input ex-member-txt" data-layer="Ex_Member_Txt" checked={formData.extracurriculars[0].member} onChange={e => updateData("extracurriculars", 0, "member", e.target.checked)} />
+        <input type="text" className="input ex-member2-txt" data-layer="Ex_Member2_Txt" checked={formData.extracurriculars[1].member} onChange={e => updateData("extracurriculars", 1, "member", e.target.checked)} />
+        <input type="text" className="input name2-txt" data-layer="Name2_Txt" value={formData.relationships[1].name} onChange={e => updateData("relationships", 1, "name", e.target.value)} />
+        <input type="text" className="input name3-txt" data-layer="Name3_Txt" value={formData.relationships[2].name} onChange={e => updateData("relationships", 2, "name", e.target.value)} />
+        <input type="text" className="input name4-txt" data-layer="Name4_Txt" value={formData.relationships[3].name} onChange={e => updateData("relationships", 3, "name", e.target.value)} />
+        <input type="text" className="input name5-txt" data-layer="Name5_Txt" value={formData.relationships[4].name} onChange={e => updateData("relationships", 4, "name", e.target.value)} />

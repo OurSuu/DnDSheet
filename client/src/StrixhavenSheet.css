@@ -1,0 +1,266 @@
+/* CSS RESET AND BASE */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Georgia', serif;
+  background-color: #111;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 100px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* BASE CANVAS EXACT REFERENCE */
+.sheet-container {
+  position: relative;
+  width: 100%;
+  max-width: 1412.69px;
+  aspect-ratio: 1412.69 / 1080;
+  margin: auto;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+}
+
+.sheet-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* DEBUG GRID */
+.grid-debug {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255,0,0,0.3) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,0,0,0.3) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+  z-index: 999;
+}
+
+/* CHECKBOX IMPLEMENTATION */
+.checkbox {
+  position: absolute;
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: none;
+  z-index: 1;
+}
+
+.checkbox::after {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  color: #111;
+  font-size: 1.2vw;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+@media (min-width: 1412px) {
+  .checkbox::after { font-size: 16px; }
+}
+
+.checkbox:checked::after {
+  opacity: 1;
+}
+
+.checkbox:hover::after {
+  opacity: 0.4;
+}
+
+.checkbox-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+/* INPUT POLISH */
+.input {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  padding: 4px;
+  font-size: 1.1vw;
+  color: #222;
+  transition: all 0.2s ease;
+  z-index: 1;
+}
+
+@media (min-width: 1412px) {
+  .input { font-size: 12px; }
+}
+
+.input:hover {
+  background: rgba(255,255,255,0.25);
+  transform: scale(1.02);
+  z-index: 5;
+}
+
+.input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* TOP BANNER CONTROLS */
+.top-banner-controls {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  background: rgba(20, 20, 20, 0.85);
+  backdrop-filter: blur(12px);
+  padding: 12px 25px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  z-index: 100;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+}
+
+.header-input {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: white;
+}
+
+.primary-btn {
+  background: #555;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: bold;
+}
+
+.primary-btn:hover { background: #777; transform: scale(1.05); }
+.primary-btn:active { transform: scale(0.95); }
+.debug-btn { background: #833; }
+.debug-btn:hover { background: #a44; transform: scale(1.05); }
+
+
+/* =========================================
+   ABSOLUTE POSITIONING LAYOUT
+   ========================================= */
+
+.frame-1 { left: 0.0000%; top: 0.0000%; width: 100.0000%; height: 100.0000%; }
+.inspirationcheckbox-0 { left: 59.4610%; top: 21.6667%; width: 1.2742%; height: 1.8519%; }
+.inspirationcheckbox-1 { left: 59.4610%; top: 25.7407%; width: 1.2742%; height: 1.8519%; }
+.inspirationcheckbox-2 { left: 59.4610%; top: 29.9074%; width: 1.2742%; height: 1.8519%; }
+.inspirationcheckbox-3 { left: 59.4610%; top: 34.0741%; width: 1.2742%; height: 1.8519%; }
+.inspirationcheckbox-4 { left: 59.4610%; top: 38.2407%; width: 1.2742%; height: 1.8519%; }
+.extracurriculars-checkbox { left: 73.8308%; top: 57.9630%; width: 1.9112%; height: 2.5000%; }
+.extracurriculars2-checkbox { left: 73.8308%; top: 63.8889%; width: 1.9112%; height: 2.5000%; }
+.year1checkbox { left: 8.2113%; top: 58.9815%; width: 1.2742%; height: 1.8519%; }
+.year1-2-2checkbox { left: 10.1225%; top: 63.9815%; width: 1.2742%; height: 1.8519%; }
+.year1-2-3checkbox { left: 13.6619%; top: 63.9815%; width: 1.2742%; height: 1.8519%; }
+.year1-2-4checkbox { left: 15.5731%; top: 63.9815%; width: 1.2742%; height: 1.8519%; }
+.year1-3-4checkbox { left: 15.5731%; top: 68.9815%; width: 1.2742%; height: 1.8519%; }
+.year1-3-3checkbox { left: 13.6619%; top: 68.9815%; width: 1.2742%; height: 1.8519%; }
+.year1-3-2checkbox { left: 10.1225%; top: 68.9815%; width: 1.2742%; height: 1.8519%; }
+.year1-3-1checkbox { left: 8.2113%; top: 68.9815%; width: 1.2742%; height: 1.8519%; }
+.year3checkbox { left: 8.2113%; top: 80.4630%; width: 1.2742%; height: 1.8519%; }
+.year3-2checkbox { left: 10.1225%; top: 80.4630%; width: 1.2742%; height: 1.8519%; }
+.year3-3checkbox { left: 13.6619%; top: 80.4630%; width: 1.2742%; height: 1.8519%; }
+.year3-4checkbox { left: 15.5731%; top: 80.4630%; width: 1.2742%; height: 1.8519%; }
+.year3-2-1checkbox { left: 7.5742%; top: 85.7407%; width: 1.2742%; height: 1.8519%; }
+.year3-2-2checkbox { left: 9.2731%; top: 85.7407%; width: 1.2742%; height: 1.8519%; }
+.year3-2-3checkbox { left: 10.7596%; top: 85.7407%; width: 1.2742%; height: 1.8519%; }
+.year3-2-4checkbox { left: 13.6619%; top: 85.7407%; width: 1.2742%; height: 1.8519%; }
+.year3-2-5checkbox { left: 15.5731%; top: 85.7407%; width: 1.2742%; height: 1.8519%; }
+.year3-3-4checkbox { left: 15.5731%; top: 90.4630%; width: 1.2742%; height: 1.8519%; }
+.year3-3-3checkbox { left: 13.6619%; top: 90.4630%; width: 1.2742%; height: 1.8519%; }
+.year3-3-2checkbox { left: 10.1225%; top: 90.4630%; width: 1.2742%; height: 1.8519%; }
+.year3-3-1checkbox { left: 8.2113%; top: 90.4630%; width: 1.2742%; height: 1.8519%; }
+.year1-2-1checkbox { left: 8.2113%; top: 63.9815%; width: 1.2742%; height: 1.8519%; }
+.year1-1checkbox { left: 10.1225%; top: 59.0741%; width: 1.2742%; height: 1.8519%; }
+.year1-2checkbox { left: 13.6619%; top: 58.9815%; width: 1.2742%; height: 1.8519%; }
+.year1-3checkbox { left: 15.5731%; top: 58.9815%; width: 1.2742%; height: 1.8519%; }
+.year2checkbox { left: 36.3845%; top: 58.9815%; width: 1.2742%; height: 1.8519%; }
+.year2-2-1checkbox { left: 36.3845%; top: 63.9815%; width: 1.2742%; height: 1.8519%; }
+.year2-2-2checkbox { left: 38.2957%; top: 63.9815%; width: 1.2742%; height: 1.8519%; }
+.year2-3-2checkbox { left: 38.2249%; top: 68.9815%; width: 1.2742%; height: 1.8519%; }
+.year2-3-3checkbox { left: 41.0564%; top: 68.9815%; width: 1.2742%; height: 1.8519%; }
+.year2-3-4checkbox { left: 42.7553%; top: 68.9815%; width: 1.2742%; height: 1.8519%; }
+.year2-3-5checkbox { left: 44.4542%; top: 68.9815%; width: 1.2742%; height: 1.8519%; }
+.year2-2-3checkbox { left: 41.8351%; top: 63.9815%; width: 1.2742%; height: 1.8519%; }
+.year2-2-4checkbox { left: 43.7463%; top: 63.9815%; width: 1.2742%; height: 1.8519%; }
+.year2-3-1checkbox { left: 36.3845%; top: 68.9815%; width: 1.2742%; height: 1.8519%; }
+.year4checkbox { left: 36.3845%; top: 80.4630%; width: 1.2742%; height: 1.8519%; }
+.year4-2checkbox { left: 38.2249%; top: 80.4630%; width: 1.2742%; height: 1.8519%; }
+.year4-3checkbox { left: 41.8351%; top: 80.4630%; width: 1.2742%; height: 1.8519%; }
+.notime-checkbox { left: 41.8351%; top: 85.5556%; width: 1.2742%; height: 1.8519%; }
+.notime2-checkbox { left: 43.6755%; top: 85.5556%; width: 1.2742%; height: 1.8519%; }
+.year4-4checkbox { left: 43.6755%; top: 80.4630%; width: 1.2742%; height: 1.8519%; }
+.year2-2checkbox { left: 38.2957%; top: 58.9815%; width: 1.2742%; height: 1.8519%; }
+.year2-3checkbox { left: 41.8351%; top: 58.9815%; width: 1.2742%; height: 1.8519%; }
+.year2-4checkbox { left: 43.7463%; top: 58.9815%; width: 1.2742%; height: 1.8519%; }
+.name-txt { left: 6.0877%; top: 21.6667%; width: 21.8732%; height: 2.8704%; }
+.point-int { left: 30.0137%; top: 21.6667%; width: 3.2562%; height: 2.8704%; }
+.point2-int { left: 30.0137%; top: 25.7407%; width: 3.2562%; height: 2.8704%; }
+.point3-int { left: 30.0137%; top: 29.9074%; width: 3.2562%; height: 2.8704%; }
+.point4-int { left: 30.0137%; top: 34.0741%; width: 3.2562%; height: 2.8704%; }
+.point5-int { left: 30.0137%; top: 38.2407%; width: 3.2562%; height: 2.8704%; }
+.relationship-txt { left: 35.7474%; top: 21.6667%; width: 21.8732%; height: 2.8704%; }
+.relationship2-txt { left: 35.7474%; top: 25.7407%; width: 21.8732%; height: 2.8704%; }
+.relationship3-txt { left: 35.7474%; top: 29.9074%; width: 21.8732%; height: 2.8704%; }
+.relationship4-txt { left: 35.7474%; top: 34.0741%; width: 21.8732%; height: 2.8704%; }
+.relationship5-txt { left: 35.7474%; top: 38.2407%; width: 21.8732%; height: 2.8704%; }
+.bool-bane-txt { left: 65.4071%; top: 21.6667%; width: 21.8732%; height: 2.8704%; }
+.bool-bane2-txt { left: 65.4071%; top: 25.7407%; width: 21.8732%; height: 2.8704%; }
+.bool-bane3-txt { left: 65.4071%; top: 29.9074%; width: 21.8732%; height: 2.8704%; }
+.bool-bane4-txt { left: 65.4071%; top: 34.0741%; width: 21.8732%; height: 2.8704%; }
+.bool-bane5-txt { left: 65.4071%; top: 38.2407%; width: 21.8732%; height: 2.8704%; }
+.ex-skills-txt { left: 77.3701%; top: 57.3148%; width: 4.5304%; height: 2.8704%; }
+.ex-skills2-txt { left: 77.3701%; top: 63.7963%; width: 4.5304%; height: 2.8704%; }
+.ex-name-txt { left: 61.3723%; top: 63.5185%; width: 11.2551%; height: 2.8704%; }
+.employer-txt { left: 61.3723%; top: 84.0741%; width: 32.2788%; height: 2.8704%; }
+.job-txt { left: 61.3723%; top: 90.7407%; width: 9.7686%; height: 2.8704%; }
+.coworker-txt { left: 75.7420%; top: 90.7407%; width: 17.9091%; height: 2.8704%; }
+.ex-name2-txt { left: 61.3723%; top: 57.3148%; width: 11.2551%; height: 2.8704%; }
+.ex-member-txt { left: 84.1657%; top: 57.3148%; width: 11.2551%; height: 2.8704%; }
+.ex-member2-txt { left: 84.1657%; top: 63.2407%; width: 11.2551%; height: 2.8704%; }
+.name2-txt { left: 6.0877%; top: 25.7407%; width: 21.8732%; height: 2.8704%; }
+.name3-txt { left: 6.0877%; top: 29.9074%; width: 21.8732%; height: 2.8704%; }
+.name4-txt { left: 6.0877%; top: 34.0741%; width: 21.8732%; height: 2.8704%; }
+.name5-txt { left: 6.0877%; top: 38.2407%; width: 21.8732%; height: 2.8704%; }
