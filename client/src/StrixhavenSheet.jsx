@@ -61,8 +61,30 @@ function StrixhavenSheet({ selectedMember }) {
   const [statusMsg, setStatusMsg] = useState('');
   const [showGrid, setShowGrid] = useState(false);
   const lastSavedData = React.useRef(null);
+  const currentMemberRef = React.useRef(selectedMember);
+  const formDataRef = React.useRef(formData);
 
   React.useEffect(() => {
+    formDataRef.current = formData;
+  }, [formData]);
+
+  React.useEffect(() => {
+    // If switching away from a member, do a synchronous save of any pending changes
+    if (currentMemberRef.current && selectedMember && currentMemberRef.current.id !== selectedMember.id) {
+       const oldDataStr = JSON.stringify(formDataRef.current);
+       if (lastSavedData.current && oldDataStr !== lastSavedData.current) {
+          console.log("Instantly saving unsaved changes for", currentMemberRef.current.name);
+          fetch('/api/save', {
+             method: 'POST', 
+             headers: { 'Content-Type': 'application/json' },
+             keepalive: true,
+             body: JSON.stringify({ member_id: currentMemberRef.current.id, data: formDataRef.current })
+          }).catch(e => console.error("Error auto-saving on switch", e));
+       }
+    }
+    
+    currentMemberRef.current = selectedMember;
+    
     // Invalidate tracking immediately when member changes to prevent cross-saving old data
     lastSavedData.current = null;
     
