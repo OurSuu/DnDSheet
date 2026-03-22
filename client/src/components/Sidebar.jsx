@@ -140,6 +140,13 @@ function Sidebar({ selectedMember, onSelectMember }) {
     setExpandedParties(prev => ({ ...prev, [partyId]: !prev[partyId] }));
   };
 
+  const handleSelectMember = (member) => {
+    onSelectMember(member);
+    if (window.innerWidth <= 768) {
+      setIsOpen(false);
+    }
+  };
+
   return (
     <>
       {!isOpen && (
@@ -196,7 +203,7 @@ function Sidebar({ selectedMember, onSelectMember }) {
                           <button type="button" className="cancel-btn" onClick={() => setEditingMemberId(null)}>✖</button>
                         </form>
                       ) : (
-                        <div className="member-display" onClick={() => onSelectMember(member)}>
+                        <div className="member-display" onClick={() => handleSelectMember(member)}>
                           <span className="member-name">{member.name}</span>
                           <div className="member-actions" onClick={e => e.stopPropagation()}>
                             <button className="edit-btn" onClick={() => {

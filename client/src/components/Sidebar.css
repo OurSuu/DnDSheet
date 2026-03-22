@@ -408,3 +408,22 @@
 .sidebar-content::-webkit-scrollbar-thumb:hover {
   background: #d4af37;
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .sidebar-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    z-index: 2000;
+    box-shadow: 10px 0 30px rgba(0,0,0,0.9);
+  }
+  
+  .sidebar-toggle-btn {
+    top: 10px;
+    left: 10px;
+    font-size: 16px;
+    padding: 6px 10px;
+  }
+}

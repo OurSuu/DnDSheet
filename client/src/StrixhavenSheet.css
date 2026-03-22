@@ -27,10 +27,13 @@ html, body {
   position: relative;
   width: 100%;
   max-width: 1412.69px;
+  min-width: 1000px; /* Crucial for mobile horizontal panning */
   aspect-ratio: 1412.69 / 1080;
   margin: auto;
   box-shadow: 0 10px 40px rgba(0,0,0,0.8);
   animation: fade-in 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+  container-type: inline-size;
+  container-name: sheet;
 }
 
 @keyframes fade-in {
@@ -70,7 +73,7 @@ html, body {
   height: 100%;
   opacity: 0;
   color: #2b1f15;
-  font-size: 1.4vw;
+  font-size: 1.4cqi;
   font-weight: bold;
   display: flex;
   align-items: center;
@@ -113,7 +116,7 @@ html, body {
   border-bottom: 1px dashed rgba(43, 31, 21, 0.4);
   border-radius: 0;
   padding: 4px;
-  font-size: 1.2vw;
+  font-size: 1.2cqi;
   font-family: 'Lora', serif;
   font-style: italic;
   font-weight: bold;
@@ -370,6 +373,44 @@ html, body {
   letter-spacing: 5px;
   animation: pulse-text 2s infinite;
   text-shadow: 0 0 15px rgba(212, 175, 55, 0.8);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .top-banner-controls {
+    width: 90%;
+    padding: 8px 12px;
+    font-size: 12px;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .waiting-book-frame {
+    width: 95%;
+  }
+  
+  .waiting-text {
+    font-size: 5vw;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .waiting-subtext {
+    font-size: 3.5vw;
+    text-align: center;
+    padding: 0 15px;
+  }
+  
+  .magic-circle-spinner {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .loading-text {
+    font-size: 18px;
+  }
 }
 
 
