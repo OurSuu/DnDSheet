@@ -59,7 +59,6 @@ const ExtraRow = ({ ec, index, updateData }) => (
 function StrixhavenSheet({ selectedMember }) {
   const [formData, setFormData] = useState(INITIAL_STATE);
   const [statusMsg, setStatusMsg] = useState('');
-  const [showGrid, setShowGrid] = useState(false);
   const lastSavedData = React.useRef(null);
   const currentMemberRef = React.useRef(selectedMember);
   const formDataRef = React.useRef(formData);
@@ -195,14 +194,11 @@ function StrixhavenSheet({ selectedMember }) {
         <div style={{ marginRight: '20px', fontWeight: 'bold' }}>
           {selectedMember ? `Selected: ${selectedMember.name}` : 'No Member Selected'}
         </div>
-          
-        <button className="primary-btn debug-btn" onClick={() => setShowGrid(!showGrid)}>Toggle Grid</button>
         {statusMsg && <div className="status-message">{statusMsg}</div>}
       </div>
 
       <div className="sheet-container">
         <img src="/Strixhaven.jpg" className="sheet-bg" alt="Background" />
-        {showGrid && <div className="grid-debug"></div>}
 
                                                                 {/* AUTO-GENERATED STRICT INPUTS */}
         <div className="frame-1" data-layer="Frame 1"></div>
