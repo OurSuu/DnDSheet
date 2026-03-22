@@ -212,6 +212,13 @@ function StrixhavenSheet({ selectedMember }) {
 
   return (
     <div className="app-layout">
+      {statusMsg === 'Loading...' && (
+        <div className="loading-spinner-container">
+           <div className="magic-circle-spinner"></div>
+           <h2 className="loading-text">Conjuring Records...</h2>
+        </div>
+      )}
+
       {/* Top Banner Controls */}
       <div className={`top-banner-controls ${statusMsg ? '' : 'hidden'}`}>
         <div style={{ marginRight: '20px', fontWeight: 'bold' }}>

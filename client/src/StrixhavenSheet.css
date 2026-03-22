@@ -298,6 +298,80 @@ html, body {
   100% { text-shadow: 0 0 10px rgba(212, 175, 55, 0.4); opacity: 0.9; }
 }
 
+/* FULL SCREEN LOADING SPINNER */
+.loading-spinner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background: radial-gradient(circle at center, rgba(28, 24, 20, 0.95) 0%, rgba(5, 4, 3, 0.98) 100%);
+  position: fixed;
+  top: 0; left: 0;
+  z-index: 9999;
+  backdrop-filter: blur(8px);
+}
+
+.magic-circle-spinner {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid transparent;
+  border-top: 4px solid #d4af37;
+  border-bottom: 4px solid #8b6b3e;
+  animation: spin-magic 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+  position: relative;
+}
+
+.magic-circle-spinner::before {
+  content: '';
+  position: absolute;
+  top: 10px; left: 10px; right: 10px; bottom: 10px;
+  border-radius: 50%;
+  border: 2px dashed #e6d8b8;
+  animation: spin-magic-reverse 4s linear infinite;
+  opacity: 0.6;
+}
+
+.magic-circle-spinner::after {
+  content: '✦';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 35px;
+  text-shadow: 0 0 15px #d4af37;
+  animation: pulse-star 2s infinite;
+}
+
+@keyframes spin-magic {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes spin-magic-reverse {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes pulse-star {
+  0% { opacity: 0.4; transform: translate(-50%, -50%) scale(0.8); }
+  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.3); }
+  100% { opacity: 0.4; transform: translate(-50%, -50%) scale(0.8); }
+}
+
+.loading-text {
+  margin-top: 40px;
+  font-family: 'Cinzel', serif;
+  color: #d4af37;
+  font-size: 24px;
+  letter-spacing: 5px;
+  animation: pulse-text 2s infinite;
+  text-shadow: 0 0 15px rgba(212, 175, 55, 0.8);
+}
+
 
 /* =========================================
    ABSOLUTE POSITIONING LAYOUT
