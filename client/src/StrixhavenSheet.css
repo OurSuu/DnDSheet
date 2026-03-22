@@ -24,9 +24,9 @@ html, body {
 .sheet-container {
   position: relative;
   width: 100%;
-  max-width: 1412.69px;
+  max-width: 1173px;
   min-width: 1000px; /* Crucial for mobile horizontal panning */
-  aspect-ratio: 1412.69 / 1080;
+  aspect-ratio: 1173 / 896;
   margin: 0 auto;
   box-shadow: 0 10px 40px rgba(0,0,0,0.8);
   animation: fade-in 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -478,32 +478,57 @@ html, body {
 .year2-2checkbox { left: 38.2957%; top: 58.9815%; width: 1.2742%; height: 1.8519%; }
 .year2-3checkbox { left: 41.8351%; top: 58.9815%; width: 1.2742%; height: 1.8519%; }
 .year2-4checkbox { left: 43.7463%; top: 58.9815%; width: 1.2742%; height: 1.8519%; }
-.name-txt { left: 6.0877%; top: 21.6667%; width: 21.8732%; height: 2.8704%; }
-.point-int { left: 30.0137%; top: 21.6667%; width: 3.2562%; height: 2.8704%; }
-.point2-int { left: 30.0137%; top: 25.7407%; width: 3.2562%; height: 2.8704%; }
-.point3-int { left: 30.0137%; top: 29.9074%; width: 3.2562%; height: 2.8704%; }
-.point4-int { left: 30.0137%; top: 34.0741%; width: 3.2562%; height: 2.8704%; }
-.point5-int { left: 30.0137%; top: 38.2407%; width: 3.2562%; height: 2.8704%; }
-.relationship-txt { left: 35.7474%; top: 21.6667%; width: 21.8732%; height: 2.8704%; }
-.relationship2-txt { left: 35.7474%; top: 25.7407%; width: 21.8732%; height: 2.8704%; }
-.relationship3-txt { left: 35.7474%; top: 29.9074%; width: 21.8732%; height: 2.8704%; }
-.relationship4-txt { left: 35.7474%; top: 34.0741%; width: 21.8732%; height: 2.8704%; }
-.relationship5-txt { left: 35.7474%; top: 38.2407%; width: 21.8732%; height: 2.8704%; }
-.bool-bane-txt { left: 65.4071%; top: 21.6667%; width: 21.8732%; height: 2.8704%; }
-.bool-bane2-txt { left: 65.4071%; top: 25.7407%; width: 21.8732%; height: 2.8704%; }
-.bool-bane3-txt { left: 65.4071%; top: 29.9074%; width: 21.8732%; height: 2.8704%; }
-.bool-bane4-txt { left: 65.4071%; top: 34.0741%; width: 21.8732%; height: 2.8704%; }
-.bool-bane5-txt { left: 65.4071%; top: 38.2407%; width: 21.8732%; height: 2.8704%; }
-.ex-skills-txt { left: 77.3701%; top: 57.3148%; width: 4.5304%; height: 2.8704%; }
-.ex-skills2-txt { left: 77.3701%; top: 63.7963%; width: 4.5304%; height: 2.8704%; }
-.ex-name-txt { left: 61.3723%; top: 63.5185%; width: 11.2551%; height: 2.8704%; }
-.employer-txt { left: 61.3723%; top: 84.0741%; width: 32.2788%; height: 2.8704%; }
-.job-txt { left: 61.3723%; top: 90.7407%; width: 9.7686%; height: 2.8704%; }
-.coworker-txt { left: 75.7420%; top: 90.7407%; width: 17.9091%; height: 2.8704%; }
-.ex-name2-txt { left: 61.3723%; top: 57.3148%; width: 11.2551%; height: 2.8704%; }
-.ex-member-txt { left: 84.1657%; top: 57.3148%; width: 11.2551%; height: 2.8704%; }
-.ex-member2-txt { left: 84.1657%; top: 63.2407%; width: 11.2551%; height: 2.8704%; }
-.name2-txt { left: 6.0877%; top: 25.7407%; width: 21.8732%; height: 2.8704%; }
-.name3-txt { left: 6.0877%; top: 29.9074%; width: 21.8732%; height: 2.8704%; }
-.name4-txt { left: 6.0877%; top: 34.0741%; width: 21.8732%; height: 2.8704%; }
-.name5-txt { left: 6.0877%; top: 38.2407%; width: 21.8732%; height: 2.8704%; }
+.name-txt { left: 6.56%; top: 21.76%; width: 20%; height: 2.45%; }
+.point-int { left: 29.75%; top: 21.76%; width: 3.75%; height: 2.45%; }
+.relationship-txt { left: 40.4%; top: 21.76%; width: 14.5%; height: 2.45%; }
+.bool-bane-txt { left: 70.08%; top: 21.76%; width: 21.3%; height: 2.45%; }
+
+.name2-txt { left: 6.56%; top: 26.0%; width: 20%; height: 2.45%; }
+.point2-int { left: 29.75%; top: 26.0%; width: 3.75%; height: 2.45%; }
+.relationship2-txt { left: 40.4%; top: 26.0%; width: 14.5%; height: 2.45%; }
+.bool-bane2-txt { left: 70.08%; top: 26.0%; width: 21.3%; height: 2.45%; }
+
+.name3-txt { left: 6.56%; top: 30.24%; width: 20%; height: 2.45%; }
+.point3-int { left: 29.75%; top: 30.24%; width: 3.75%; height: 2.45%; }
+.relationship3-txt { left: 40.4%; top: 30.24%; width: 14.5%; height: 2.45%; }
+.bool-bane3-txt { left: 70.08%; top: 30.24%; width: 21.3%; height: 2.45%; }
+
+.name4-txt { left: 6.56%; top: 34.6%; width: 20%; height: 2.45%; }
+.point4-int { left: 29.75%; top: 34.6%; width: 3.75%; height: 2.45%; }
+.relationship4-txt { left: 40.4%; top: 34.6%; width: 14.5%; height: 2.45%; }
+.bool-bane4-txt { left: 70.08%; top: 34.6%; width: 21.3%; height: 2.45%; }
+
+.name5-txt { left: 6.56%; top: 38.84%; width: 20%; height: 2.45%; }
+.point5-int { left: 29.75%; top: 38.84%; width: 3.75%; height: 2.45%; }
+.relationship5-txt { left: 40.4%; top: 38.84%; width: 14.5%; height: 2.45%; }
+.bool-bane5-txt { left: 70.08%; top: 38.84%; width: 21.3%; height: 2.45%; }
+
+.year1-skills-txt { left: 19.69%; top: 58.59%; width: 9.55%; height: 2.45%; }
+.year1-skills2-txt { left: 19.69%; top: 63.72%; width: 9.55%; height: 2.45%; }
+.year1-skills3-txt { left: 19.69%; top: 68.52%; width: 9.55%; height: 2.45%; }
+
+.year2-skills-txt { left: 48.25%; top: 58.59%; width: 9.55%; height: 2.45%; }
+.year2-skills2-txt { left: 48.25%; top: 63.72%; width: 9.55%; height: 2.45%; }
+.year2-skills3-txt { left: 48.25%; top: 68.52%; width: 9.55%; height: 2.45%; }
+
+.year3-skills-txt { left: 19.69%; top: 80.13%; width: 9.55%; height: 2.45%; }
+.year3-skills2-txt { left: 19.69%; top: 85.26%; width: 9.55%; height: 2.45%; }
+.year3-skills3-txt { left: 19.69%; top: 90.40%; width: 9.55%; height: 2.45%; }
+
+.year4-skills-txt { left: 48.25%; top: 80.13%; width: 9.55%; height: 2.45%; }
+
+.ex-name-txt { left: 62.23%; top: 58.59%; width: 9.55%; height: 2.45%; }
+.ex-name2-txt { left: 62.23%; top: 63.72%; width: 9.55%; height: 2.45%; }
+
+.ex-skills-txt { left: 77.83%; top: 58.59%; width: 6.65%; height: 2.45%; }
+.ex-skills2-txt { left: 77.83%; top: 63.72%; width: 6.65%; height: 2.45%; }
+
+.ex-member-txt { left: 86.96%; top: 58.59%; width: 6.65%; height: 2.45%; }
+.ex-member2-txt { left: 86.96%; top: 63.72%; width: 6.65%; height: 2.45%; }
+
+.employer-txt { left: 62.23%; top: 84.04%; width: 9.55%; height: 2.45%; }
+.employer2-txt { left: 74.08%; top: 84.04%; width: 9.55%; height: 2.45%; }
+.employer3-txt { left: 85.93%; top: 84.04%; width: 9.55%; height: 2.45%; }
+
+.job-txt { left: 62.23%; top: 91.18%; width: 12.7%; height: 2.45%; }
+.coworker-txt { left: 78.85%; top: 91.18%; width: 13.46%; height: 2.45%; }

@@ -6,18 +6,18 @@ import './StrixhavenSheet.css';
 const INITIAL_STATE = {
   name: "",
   party: "",
-  relationships: Array(5).fill({ name: "", points: 0, relationship: "", inspiration: false, boonBane: "" }),
+  relationships: Array(5).fill(0).map(() => ({ name: "", points: 0, relationship: "", inspiration: false, boonBane: "" })),
   reportCards: {
-    year1: Array(3).fill({ checks: [false, false, false, false], skills: "" }),
-    year2: Array(3).fill({ checks: [false, false, false, false], skills: "" }),
-    year3: Array(3).fill({ checks: [false, false, false, false], skills: "" }),
-    year4: Array(1).fill({ checks: [false, false, false, false], skills: "" }),
+    year1: Array(3).fill(0).map(() => ({ checks: [false, false, false, false], skills: "" })),
+    year2: Array(3).fill(0).map(() => ({ checks: [false, false, false, false], skills: "" })),
+    year3: Array(3).fill(0).map(() => ({ checks: [false, false, false, false], skills: "" })),
+    year4: Array(1).fill(0).map(() => ({ checks: [false, false, false, false], skills: "" })),
   },
   extracurriculars: [
     { name: "", d4: false, skills: "", member: false },
     { name: "", d4: false, skills: "", member: false }
   ],
-  job: { employer: "", job: "", coworker: "" }
+  job: { employer: "", employer2: "", employer3: "", job: "", coworker: "" }
 };
 
 // ==========================
@@ -228,7 +228,7 @@ function StrixhavenSheet({ selectedMember }) {
       </div>
 
       <div className="sheet-container">
-        <img src="/Strixhaven.jpg" className="sheet-bg" alt="Background" />
+        <img src="/NewSheet.jpg" className="sheet-bg" alt="Background" />
 
                                                                 {/* AUTO-GENERATED STRICT INPUTS */}
         <div className="frame-1" data-layer="Frame 1"></div>
@@ -312,6 +312,23 @@ function StrixhavenSheet({ selectedMember }) {
         <input type="text" className="input name3-txt" data-layer="Name3_Txt" value={formData.relationships[2].name} onChange={e => updateData("relationships", 2, "name", e.target.value)} />
         <input type="text" className="input name4-txt" data-layer="Name4_Txt" value={formData.relationships[3].name} onChange={e => updateData("relationships", 3, "name", e.target.value)} />
         <input type="text" className="input name5-txt" data-layer="Name5_Txt" value={formData.relationships[4].name} onChange={e => updateData("relationships", 4, "name", e.target.value)} />
+
+        <input type="text" className="input employer2-txt" data-layer="Job_Employer2_Txt" value={formData.job.employer2 || ''} onChange={e => setFormData({...formData, job: {...formData.job, employer2: e.target.value}})} />
+        <input type="text" className="input employer3-txt" data-layer="Job_Employer3_Txt" value={formData.job.employer3 || ''} onChange={e => setFormData({...formData, job: {...formData.job, employer3: e.target.value}})} />
+
+        <input type="text" className="input year1-skills-txt" data-layer="Year1_Skills_Txt" value={formData.reportCards.year1[0].skills || ''} onChange={e => setFormData({...formData, reportCards: {...formData.reportCards, year1: Object.assign([...formData.reportCards.year1], {0: {...formData.reportCards.year1[0], skills: e.target.value}})}})} />
+        <input type="text" className="input year1-skills2-txt" data-layer="Year1_Skills2_Txt" value={formData.reportCards.year1[1].skills || ''} onChange={e => setFormData({...formData, reportCards: {...formData.reportCards, year1: Object.assign([...formData.reportCards.year1], {1: {...formData.reportCards.year1[1], skills: e.target.value}})}})} />
+        <input type="text" className="input year1-skills3-txt" data-layer="Year1_Skills3_Txt" value={formData.reportCards.year1[2].skills || ''} onChange={e => setFormData({...formData, reportCards: {...formData.reportCards, year1: Object.assign([...formData.reportCards.year1], {2: {...formData.reportCards.year1[2], skills: e.target.value}})}})} />
+
+        <input type="text" className="input year2-skills-txt" data-layer="Year2_Skills_Txt" value={formData.reportCards.year2[0].skills || ''} onChange={e => setFormData({...formData, reportCards: {...formData.reportCards, year2: Object.assign([...formData.reportCards.year2], {0: {...formData.reportCards.year2[0], skills: e.target.value}})}})} />
+        <input type="text" className="input year2-skills2-txt" data-layer="Year2_Skills2_Txt" value={formData.reportCards.year2[1].skills || ''} onChange={e => setFormData({...formData, reportCards: {...formData.reportCards, year2: Object.assign([...formData.reportCards.year2], {1: {...formData.reportCards.year2[1], skills: e.target.value}})}})} />
+        <input type="text" className="input year2-skills3-txt" data-layer="Year2_Skills3_Txt" value={formData.reportCards.year2[2].skills || ''} onChange={e => setFormData({...formData, reportCards: {...formData.reportCards, year2: Object.assign([...formData.reportCards.year2], {2: {...formData.reportCards.year2[2], skills: e.target.value}})}})} />
+
+        <input type="text" className="input year3-skills-txt" data-layer="Year3_Skills3_Txt" value={formData.reportCards.year3[0].skills || ''} onChange={e => setFormData({...formData, reportCards: {...formData.reportCards, year3: Object.assign([...formData.reportCards.year3], {0: {...formData.reportCards.year3[0], skills: e.target.value}})}})} />
+        <input type="text" className="input year3-skills2-txt" data-layer="Year3_Skills2_Txt" value={formData.reportCards.year3[1].skills || ''} onChange={e => setFormData({...formData, reportCards: {...formData.reportCards, year3: Object.assign([...formData.reportCards.year3], {1: {...formData.reportCards.year3[1], skills: e.target.value}})}})} />
+        <input type="text" className="input year3-skills3-txt" data-layer="Year3_Skills3_Txt" value={formData.reportCards.year3[2].skills || ''} onChange={e => setFormData({...formData, reportCards: {...formData.reportCards, year3: Object.assign([...formData.reportCards.year3], {2: {...formData.reportCards.year3[2], skills: e.target.value}})}})} />
+
+        <input type="text" className="input year4-skills-txt" data-layer="Year4_Skills_Txt" value={formData.reportCards.year4[0].skills || ''} onChange={e => setFormData({...formData, reportCards: {...formData.reportCards, year4: Object.assign([...formData.reportCards.year4], {0: {...formData.reportCards.year4[0], skills: e.target.value}})}})} />
       </div>
     </div>
   );
